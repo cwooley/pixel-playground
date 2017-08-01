@@ -1,3 +1,4 @@
+
 let colors = ['black', 'maroon', 'green', 'navy', 'white', 'red', 'lime', 'blue', 'gray', 'purple', 'orange', 'cyan', 'olive', 'yellow', 'magenta', 'teal' ]
 class ColorPalette {
 
