@@ -67,7 +67,7 @@ function renderGrid(canvasContext){
 }
 
 function onDataReceived(data) {
-  let square = Square.findByCoords(data.x, data.y)
+  var square = Square.findByCoords(data.x, data.y)
   square.color = data.color
   renderGrid(ctx)
 }
