@@ -20,8 +20,15 @@ function addCanvasListener(){
     let x = e.layerX
   	let y = e.layerY
   	let square = Square.findByCoords(x,y)
-    // update Database & Re-Render
     square.color = palette.activeColor
+    // update Database & Re-Render
+    $.ajax({
+      type: 'PUT',
+      url: `http://localhost:3000/squares/${square.id}`,
+      data: {
+        color: square.color
+      }
+    })
   	renderGrid(ctx)
   })
 
@@ -37,7 +44,7 @@ function addPalleteListener(){
 function makeAPICall(){
   return $.ajax({
   	type: 'GET',
-  	url: 'http://localhost:3000/squares',
+  	url: `http://localhost:3000/squares`,
   	dataType: 'json'
   })
 }
@@ -50,7 +57,7 @@ function makeCanvas(){
 
 function populateSquareStore(resp){
   resp.forEach((square)=>{
-  new Square(square.x, square.y, square.color)
+  new Square(square.x, square.y, square.color, square.id)
     })
 }
 

@@ -6,4 +6,9 @@ class SquaresController < ApplicationController
     render json: @squares
   end
 
+  def update
+    square = Square.find(params[:id])
+    square.update(color: params[:color])
+    byebug
+  end
 end

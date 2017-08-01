@@ -3,7 +3,7 @@ function createSquare(){
   const height = 10
 
   return class {
-    constructor(x,y,color){
+    constructor(x,y,color, id){
       this.width = width
       this.height = height
       this.x = x
@@ -13,6 +13,7 @@ function createSquare(){
       } else {
         this.color = color
       }
+      this.id = id
       store.squares.push(this)
     }
     render(canvasContext){
