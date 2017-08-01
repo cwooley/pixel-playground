@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :squares
 
   root to: 'pages#index'
+
+  mount ActionCable.server, at: "/cable"
 end

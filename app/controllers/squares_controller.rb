@@ -9,5 +9,10 @@ class SquaresController < ApplicationController
   def update
     square = Square.find(params[:id])
     square.update(color: params[:color])
+    ActionCable.server.broadcast "canvas_channel",
+                                color: square.color,
+                                x: square.x,
+                                y: square.y
+
   end
 end
