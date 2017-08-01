@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rack-cors'
+gem 'webpacker'
 
 group :production do
   gem 'pg'
