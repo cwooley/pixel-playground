@@ -19,7 +19,9 @@ function addCanvasListener(){
   canvas.addEventListener('click', function(e){
     let x = e.layerX
   	let y = e.layerY
+    console.log(`clicked: ${x}, ${y}`)
   	let square = Square.findByCoords(x,y)
+    console.log(`returned: ${square.x}, ${square.y}`)
     square.color = palette.activeColor
     // update Database & Re-Render
     $.ajax({
