@@ -17,7 +17,7 @@ function createSquare(){
     }
     render(canvasContext){
       canvasContext.fillStyle = this.color
-      canvasContext.fillRect(width, height, 10, 10)
+      canvasContext.fillRect(this.x, this.y, width, height)
     }
 
     static findByCoords(x,y){

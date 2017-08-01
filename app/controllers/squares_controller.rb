@@ -5,5 +5,5 @@ class SquaresController < ApplicationController
     @squares = Square.all
     render json: @squares
   end
-  
+
 end
