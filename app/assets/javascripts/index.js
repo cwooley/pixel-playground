@@ -24,7 +24,7 @@ function addCanvasListener(){
     // update Database & Re-Render
     $.ajax({
       type: 'PUT',
-      url: `${window.location.href}/squares/${square.id}`,
+      url: `${window.location.href}squares/${square.id}`,
       data: {
         color: square.color
       }
@@ -43,7 +43,7 @@ function addPalleteListener(){
 function makeAPICall(){
   return $.ajax({
   	type: 'GET',
-  	url: `${window.location.href}/squares`,
+  	url: `${window.location.href}squares`,
   	dataType: 'json'
   })
 }
