@@ -20,14 +20,15 @@ function addCanvasListener(){
     let x = e.layerX
   	let y = e.layerY
   	let square = Square.findByCoords(x,y)
+    let data_obj = {
+      color: square.color
+    };
     square.color = palette.activeColor
     // update Database & Re-Render
     $.ajax({
       type: 'PUT',
       url: `${window.location.href}squares/${square.id}`,
-      data: {
-        color: square.color
-      }
+      data: JSON.stringify(data_obj)
     })
   	renderGrid(ctx)
   })
