@@ -31,7 +31,6 @@ function addCanvasListener(){
     })
   	renderGrid(ctx)
   })
-
 }
 
 function addPalleteListener(){

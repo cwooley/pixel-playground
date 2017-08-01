@@ -9,6 +9,5 @@ class SquaresController < ApplicationController
   def update
     square = Square.find(params[:id])
     square.update(color: params[:color])
-    byebug
   end
 end
