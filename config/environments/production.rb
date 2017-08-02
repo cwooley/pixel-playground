@@ -1,11 +1,7 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  #FOR REDIS!!
-  config.action_cable.allowed_request_origins = ['https://still-thicket-94595.herokuapp.com',
-                                               'https://still-thicket-94595.herokuapp.com']
 
-                                               config.action_cable.url = "wss://still-thicket-94595.herokuapp.com/cable"
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -90,6 +86,12 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
+
+  #FOR REDIS!!
+  config.action_cable.allowed_request_origins = ['http://still-thicket-94595.herokuapp.com',
+                                               'https://still-thicket-94595.herokuapp.com']
+
+  config.action_cable.url = "wss://still-thicket-94595.herokuapp.com/cable"
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
