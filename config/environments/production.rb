@@ -1,8 +1,11 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # REDIS 
+  # REDIS
   config.web_socket_server_url = "wss://pixel-playground.herokuapp.com/cable"
+
+  # To push style sheet to herokuapp
+  config.serve_static_assets = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -24,6 +27,8 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
+
+  # Possibly remove this one maybe later for Heroku stylesheet (?)
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
