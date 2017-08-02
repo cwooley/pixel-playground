@@ -1,8 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # REDIS
-  config.web_socket_server_url = "wss://mighty-headland-67478.herokuapp.com/cable"
+  # REDIS 
+  config.web_socket_server_url = "wss://pixel-playground.herokuapp.com/cable"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
