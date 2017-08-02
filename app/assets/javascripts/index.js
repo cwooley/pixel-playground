@@ -44,7 +44,8 @@ function addCanvasListener(){
 
 function addPalleteListener(){
   $('body').on('click', '.color-picker', function(){
-    palette.activeColor = this.dataset.color
+    // palette.activeColor = this.dataset.color
+    palette.selectColor(this.dataset.color)
   })
 }
 

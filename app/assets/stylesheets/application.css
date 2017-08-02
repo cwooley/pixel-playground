@@ -1,26 +1,30 @@
-.playground-container {
-  width:1400px;
-  height:1200px;
-  left:0;
-  right:0;
-  margin:auto;
-  margin-top:4%;
-  padding:20px 40px;
-  background:rgba(255,255,255, .9);
+body {
+  background: #5c6bc0;
+}
+
+.canvas {
+  cursor: crosshair;
 }
 
 .color-picker {
   cursor: pointer;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border: 1px solid black;
   display: inline-block;
   float: right;
 }
 
+.activeColor {
+  box-shadow: 0 0 2em black;
+}
+
 .color-palette {
-  background-color: #c1c1c1;
-  width: 50px;
-  height: 200px;
+  width: 26px;
+  height: 400px;
   float: right;
+}
+
+.playground-header {
+  height: 150px;
 }
