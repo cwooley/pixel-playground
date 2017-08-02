@@ -8,3 +8,19 @@
   padding:20px 40px;
   background:rgba(255,255,255, .9);
 }
+
+.color-picker {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.color-palette {
+  background-color: #c1c1c1;
+  width: 50px;
+  height: 200px;
+  float: right;
+}
