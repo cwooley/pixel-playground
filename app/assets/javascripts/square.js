@@ -1,6 +1,7 @@
 function createSquare(){
   const width = 10
   const height = 10
+  let displayGridLines = false
 
   return class {
     constructor(x,y,color, id){
@@ -19,6 +20,10 @@ function createSquare(){
     render(canvasContext){
       canvasContext.fillStyle = this.color
       canvasContext.fillRect(this.x, this.y, width, height)
+      if (displayGridLines) {
+        ctx.setLineDash([1, 1]);
+        ctx.strokeRect(this.x, this.y, width, height);
+      }
     }
 
     static findByCoords(x,y){

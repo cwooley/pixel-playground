@@ -1,23 +1,36 @@
 
-let colors = ['black', 'maroon', 'green', 'navy', 'white', 'red', 'lime', 'blue', 'gray', 'purple', 'orange', 'cyan', 'olive', 'yellow', 'magenta', 'teal' ]
+let colors = ['maroon', 'red', 'orange', 'yellow', 'lime', 'olive', 'green', 'cyan', 'teal', 'blue', 'navy', 'purple', 'magenta', 'gray', 'black', 'white']
+
 class ColorPalette {
 
-constructor(activeColor){
-  if (!activeColor){
-    this.activeColor = 'rgb(255,255,255)'
+constructor(activeColor) {
+  if (!activeColor) {
+    this.activeColor = 'white'
   } else {
     this.activeColor = activeColor
   }
 }
 
-render(){
+swatchHtml(color) {
+  let divClass = "color-picker"
+  if (color === this.activeColor) {
+    divClass += " activeColor"
+  }
+  return `<div class="${divClass}" data-color="${color}"" style="background-color: ${color};">
+  </div>`
+}
 
+render() {
   let HTML = colors.map((color)=>{
-    return `<div class="color-picker" data-color="${color}" style="background-color: ${color}; cursor:pointer; width: 25px; height: 25px; border-radius: 50%; display: inline-block; float: right;">
-    </div>`
+    return this.swatchHtml(color)
   }).join(' ')
-  $('#palette-goes-here').empty()
-  $('#palette-goes-here').append(HTML)
+  $('.color-palette').empty()
+  $('.color-palette').append(HTML)
+}
+
+selectColor(color) {
+  this.activeColor = color
+  this.render()
 }
 
 }
