@@ -15,10 +15,19 @@ $('document').ready(function(){
 
 })
 
+function getMousePosition(e){
+  let boundingRect = canvas.getBoundingClientRect();
+  return {
+    x: Math.round(e.clientX - boundingRect.left),
+    y: Math.round(e.clientY - boundingRect.top)
+  };
+}
+
 function addCanvasListener(){
   canvas.addEventListener('click', function(e){
-    let x = e.layerX
-  	let y = e.layerY
+    let coords = getMousePosition(e)
+    let x = coords.x
+    let y = coords.y
   	let square = Square.findByCoords(x,y)
     square.color = palette.activeColor
     // update Database & Re-Render
@@ -35,7 +44,8 @@ function addCanvasListener(){
 
 function addPalleteListener(){
   $('body').on('click', '.color-picker', function(){
-    palette.activeColor = this.dataset.color
+    // palette.activeColor = this.dataset.color
+    palette.selectColor(this.dataset.color)
   })
 }
 

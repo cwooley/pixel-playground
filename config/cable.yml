@@ -1,0 +1,13 @@
+development:
+  adapter: async
+
+test:
+  adapter: async
+
+production:
+  adapter: redis
+  url: <%= ENV["REDISTOGO_URL"] %>
+  host: angelfish.redistogo.com
+  port: 11359
+  password: <%= ENV["REDISTOGO_PASS"] %>
+  channel_prefix: pixel_playground_production
