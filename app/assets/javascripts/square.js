@@ -17,12 +17,12 @@ function createSquare(){
       this.id = id
       store.squares.push(this)
     }
-    render(canvasContext){
-      canvasContext.fillStyle = this.color
-      canvasContext.fillRect(this.x, this.y, width, height)
+    render(canvas){
+      canvas.context.fillStyle = this.color
+      canvas.context.fillRect(this.x, this.y, width, height)
       if (displayGridLines) {
-        ctx.setLineDash([1, 1]);
-        ctx.strokeRect(this.x, this.y, width, height);
+        canvas.context.setLineDash([1, 1]);
+        canvas.context.strokeRect(this.x, this.y, width, height);
       }
     }
 
