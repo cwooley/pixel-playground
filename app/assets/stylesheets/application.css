@@ -28,3 +28,7 @@ body {
 .playground-header {
   height: 150px;
 }
+
+.playground-tools {
+  margin-top: 50px;
+}
