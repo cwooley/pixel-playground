@@ -2,6 +2,9 @@ store = { squares: []}
 let canvas
 let ctx
 const palette = new ColorPalette()
+
+
+const chat = new ChatBox
 $('document').ready(function(){
 
   makeAPICall()
@@ -13,7 +16,38 @@ $('document').ready(function(){
   palette.render()
   addPalleteListener()
 
+  renderChatInput()
+  renderChatBox()
+
 })
+
+function renderChatInput(){
+  $('#chat-form').html(chat.renderChatForm())
+
+}
+
+function renderChatBox(){
+  $('#chat-goes-here').html(chat.render())
+  let messages = $('#chat-goes-here');
+  messages.scrollTop(messages.prop("scrollHeight"))
+}
+
+
+function sendChatMessage(){
+  let msgContent = $('#chat-message').val()
+  if (msgContent != ""){
+    $('#chat-message').val('')
+    $.ajax({
+      type: 'POST',
+      url: `${window.location.href}chat`,
+      data: {
+        content: msgContent
+      }
+    })
+  }
+  $('#chat-message').focus()
+}
+
 
 function getMousePosition(e){
   let boundingRect = canvas.getBoundingClientRect();
@@ -80,4 +114,10 @@ function onDataReceived(data) {
   var square = Square.findByCoords(data.x, data.y)
   square.color = data.color
   renderGrid(ctx)
+}
+
+
+
+function chatReceived(data){
+  new Message(data.content)
 }

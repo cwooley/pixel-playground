@@ -1,12 +1,12 @@
-let allMessages = []
 class Message {
   constructor(content){
     this.content = content
-    allMessages.push(this)
+    chat.messages.push(this)
+    renderChatBox();
   }
 
   render(){
-    `<li class="collection-item">${this.content}/li>`
+    return `<li class="collection-item chat">${this.content}</li>`
   }
 
   static getAllMessages(){
