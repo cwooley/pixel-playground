@@ -1,6 +1,6 @@
 class Chatbox {
       constructor(){
-        this.messages = []
+        this.messages = Message.getAllMessages
       }
 
       getMessagesHTML(){
