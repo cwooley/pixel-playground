@@ -15,6 +15,10 @@ $('document').ready(function(){
   addPaletteListener()
   renderChatInput()
   renderChatBox()
+
+  // Focus with keyboard/enter to send
+  enterToSend()
+  typeToFocus()
 })
 
 function renderChatInput(){

@@ -25,3 +25,23 @@ function createChatBox(){
 }
 
 let ChatBox = createChatBox()
+
+// Enter to send event listener
+function enterToSend() {
+  $('body').keydown((event) => {
+    if ( event.keyCode == 13 ) {
+      sendChatMessage();
+    }
+  })
+};
+
+
+// Type A-Z or 0-9 to focus on chatbox input
+function typeToFocus() {
+  $('body').keydown((event) => {
+    // Select A-Z or 0-9
+    if ( (event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 48 && event.keyCode <= 57) ) {
+      $('#chat-message').focus();
+    }
+  })
+};
