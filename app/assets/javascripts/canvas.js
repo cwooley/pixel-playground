@@ -21,6 +21,10 @@ function createCanvas() {
         y: Math.round(event.clientY - boundingRect.top)
       }
     }
+    exportSnapshotToImgur() {
+      let snapshot = this.convertToImage().src.split(",")[1]
+      ImgurAPI.exportSnapShot(snapshot)
+    }
   }
 }
 

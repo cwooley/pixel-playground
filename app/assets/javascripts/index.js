@@ -5,11 +5,12 @@ const chat = new ChatBox
 
 $('document').ready(function(){
   let squaresUrl = `${window.location.href}squares`
-  railsAPI.getAll(squaresUrl)
+  RailsAPI.getAll(squaresUrl)
   .then(resp => populateSquareStore(resp))
   .then(() => makeCanvas())
   .then(canvas => canvas.render())
   .then(() => addCanvasListener())
+  .then(() => addSnapShotListener())
 
   palette.render()
   addPaletteListener()
@@ -61,8 +62,14 @@ function addCanvasListener() {
     square.color = palette.activeColor
     let url = `${window.location.href}squares/${square.id}`
     // update Database & Re-Render
-    railsAPI.putSquare(url, square.color)
+    RailsAPI.putSquare(url, square.color)
   	canvas.render()
+  })
+}
+
+function addSnapShotListener() {
+  $('body').on('click', '#btn-snapshot', function() {
+    canvas.exportSnapshotToImgur()
   })
 }
 
