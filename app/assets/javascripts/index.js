@@ -32,7 +32,7 @@ function renderChatBox(){
 }
 
 function sendChatMessage(){
-  let msgContent = $('#chat-message').val()
+  let msgContent = `${sessionStorage.SessionName}: ${$('#chat-message').val()}`
   if (msgContent != ""){
     $('#chat-message').val('')
     $.ajax({
