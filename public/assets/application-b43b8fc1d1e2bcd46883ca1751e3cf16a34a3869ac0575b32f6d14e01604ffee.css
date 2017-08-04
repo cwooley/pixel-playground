@@ -1,0 +1,57 @@
+body {
+  background: #5c6bc0;
+}
+
+.canvas {
+  cursor: crosshair;
+}
+
+.color-picker {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  display: inline-block;
+  float: right;
+}
+
+.activeColor {
+  box-shadow: 0 0 2em black;
+}
+
+.color-palette {
+  width: 26px;
+  height: 400px;
+  float: right;
+}
+
+.playground-header {
+  height: 150px;
+}
+
+.playground-tools {
+  margin-top: 50px;
+}
+
+.chat-header{
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px grey;
+}
+
+.foot{
+  background-color: black;
+  opacity: 0.2;
+  min-height: 100px;
+}
+
+#chat-goes-here {
+  background-color: white;
+  height: 300px;
+  overflow-y: auto;
+}
+
+#chat-form {
+  background-color: white;
+  border-style: 1px solid;
+}
