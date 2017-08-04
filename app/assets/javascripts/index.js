@@ -70,7 +70,7 @@ function addCanvasListener() {
 function addSnapShotListener() {
   $('body').on('click', '#btn-snapshot', function() {
     canvas.exportSnapshotToImgur()
-  })
+    })
 }
 
 function addPaletteListener() {
@@ -87,4 +87,10 @@ function onDataReceived(data) {
 
 function chatReceived(data){
   new Message(data.content)
+}
+
+function sendToClipboard(value) {
+  $('#imgur-url').val(value)
+  $('#imgur-url').select()
+  document.execCommand('copy')
 }

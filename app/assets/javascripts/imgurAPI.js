@@ -13,10 +13,11 @@ class ImgurAPI {
             'type': 'base64'
          },
          success: function(response) {
-            console.log(response)
+           window.open(response.data.link, '_blank')
+           Materialize.toast("What're you waiting for? Check the new tab to see your snapshot.", 4000)
          },
          error: function(error) {
-            console.log(error)
+           Materialize.toast("Somewhere, something failed.", 4000)
          }
      });
   }
