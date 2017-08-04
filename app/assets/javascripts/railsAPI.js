@@ -1,4 +1,4 @@
-class railsAPI {
+class RailsAPI {
 
   static getAll(requestUrl) {
     return $.ajax({
