@@ -23,3 +23,6 @@
 .byebug_history
 /.env
 /app/assets/images/header_text.png
+
+# Ignore application configuration
+/config/application.yml

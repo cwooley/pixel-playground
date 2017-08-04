@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'rack-cors'
 gem 'webpacker'
+gem 'imgur-api'
 
 group :production do
   gem 'pg'

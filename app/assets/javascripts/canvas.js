@@ -21,6 +21,29 @@ function createCanvas() {
         y: Math.round(event.clientY - boundingRect.top)
       }
     }
+    exportSnapshotToImgur() {
+      let clientId = 'abfc0c3ba309213'
+      let imgData = this.convertToImage().src.split(",")[1]
+      $.ajax({
+          url: 'https://api.imgur.com/3/image',
+          headers: {
+              'Authorization': `Client-ID ${clientId}`
+           },
+           type: 'POST',
+           data: {
+              'image': `${imgData}`,
+              'type': 'base64'
+           },
+           success: function(response) {
+              console.log(response)
+              debugger;
+           },
+           error: function(error) {
+              console.log(error)
+           }
+
+       });
+    }
   }
 }
 
