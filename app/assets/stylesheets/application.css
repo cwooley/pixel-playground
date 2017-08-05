@@ -43,15 +43,48 @@ body {
   background-color: black;
   opacity: 0.2;
   min-height: 100px;
+  max-width: 79.45%; /* leave space for pixel chat/buttons */
+  text-align: center; /* change back if you don't like */
+}
+
+/* get that canvas on top of that chat! */
+#canvas-column {
+  z-index: 100;
+}
+
+/* get that canvas on top of that chat! */
+#myCanvas {
+  z-index: 100;
+}
+
+
+/* the below 3 IDs make up the chat */
+/* I set them to be fixed on the right */
+/* sized to avoid footer and palette toggle/imgur buttons */
+#chat-container {
+  z-index: -1; /* push pixel chat behind canvas when resized small */
+  position: fixed;
+  right: 20px;
+  top: 0px;
+  width: 250px;
+  padding-bottom: 20px;
 }
 
 #chat-goes-here {
   background-color: white;
-  height: 300px;
+  height: 450px;
+  width: 250px;
   overflow-y: auto;
+  position: fixed; /* fixed right */
+  right: 20px; /* fixed right */
+  top: 150px; /* fixed right */
 }
 
 #chat-form {
   background-color: white;
+  position: fixed; /* fixed right */
+  top: 600px; /* fixed right */
+  right: 20px; /* fixed right */
+  width: 250px;
   border-style: 1px solid;
 }

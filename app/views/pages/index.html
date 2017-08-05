@@ -6,21 +6,13 @@
   </head>
   <body>
       <div class="row">
-        <div class="col s12 playground-header">
+        <div class="col s12 m12 l12 playground-header">
           <img src="https://i.imgur.com/cvGEOdc.png">
         </div>
       </div>
       <div class="row">
-        <div class="col s2 playground-tools">
-          <h3 class="chat-header">Pixel Chat</h3><h7>Type to chat, enter to send!</h7>
-          <div id="chat-goes-here">
+        <div class="col s1 m1 l1 playground-tools" id="palette-column">
 
-          </div>
-          <div id="chat-form">
-
-          </div>
-          <!-- This is the hidden div for copying imgur links -->
-          <div id="copy-div" style="display: hidden;"> <input type="text" id="imgur-url"> </div>
           <div class="fixed-action-btn">
             <a class="btn-floating btn-large indigo darken-4" id="btn-toggle-palette">
               <i class="material-icons">palette</i>
@@ -31,13 +23,22 @@
           </div>
           <div class="color-palette"></div>
         </div>
-        <div class="col s8">
+        <div class="col s8 m8 l8" id="canvas-column">
           <canvas id="myCanvas" class="canvas" width="1000" height="1000">
           </canvas>
         </div>
-        <div class="col s2">
-          <div class="pictures-go-here" style="display: block;">
+        <div class="col s3 m3 l3" id="chat-container">
+          <h4 class="chat-header">Pixel Chat</h4><h7>Type to chat, enter to send!</h7>
+          <div id="chat-goes-here">
+
           </div>
+          <div id="chat-form">
+
+          </div>
+          <!-- This is the hidden div for copying imgur links -->
+          <div id="copy-div" style="display: none;"> <input type="text" id="imgur-url"> </div>
+          <!-- <div class="pictures-go-here" style="display: block;">
+          </div> -->
         </div>
       </div>
   </body>
