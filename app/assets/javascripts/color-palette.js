@@ -3,34 +3,40 @@ let colors = ['maroon', 'red', 'orange', 'yellow', 'lime', 'olive', 'green', 'cy
 
 class ColorPalette {
 
-constructor(activeColor) {
-  if (!activeColor) {
-    this.activeColor = 'white'
-  } else {
-    this.activeColor = activeColor
+  constructor(activeColor) {
+    if (!activeColor) {
+      this.activeColor = 'white'
+    } else {
+      this.activeColor = activeColor
+    }
   }
-}
 
-swatchHtml(color) {
-  let divClass = "color-picker"
-  if (color === this.activeColor) {
-    divClass += " activeColor"
+  swatchHtml(color) {
+    let divClass = "color-picker"
+    if (color === this.activeColor) {
+      divClass += " activeColor"
+    }
+    return `<div class="${divClass}" data-color="${color}"" style="background-color: ${color};">
+    </div>`
   }
-  return `<div class="${divClass}" data-color="${color}"" style="background-color: ${color};">
-  </div>`
-}
 
-render() {
-  let HTML = colors.map((color)=>{
-    return this.swatchHtml(color)
-  }).join(' ')
-  $('.color-palette').empty()
-  $('.color-palette').append(HTML)
-}
+  render() {
+    let HTML = colors.map((color)=>{
+      return this.swatchHtml(color)
+    }).join(' ')
+    $('.color-palette').empty()
+    $('.color-palette').append(HTML)
+  }
 
-selectColor(color) {
-  this.activeColor = color
-  this.render()
-}
+  selectColor(color) {
+    this.activeColor = color
+    this.render()
+  }
+
+  toggleSelector() {
+    $('#btn-toggle-palette').on('click', (event) => {
+      $('.color-palette').toggle()
+    })
+  }
 
 }

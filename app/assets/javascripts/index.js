@@ -16,6 +16,7 @@ $('document').ready(function(){
   addPaletteListener()
   renderChatInput()
   renderChatBox()
+  palette.toggleSelector()
 
   // Focus with keyboard/enter to send
   enterToSend()
