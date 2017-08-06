@@ -21,6 +21,9 @@ $('document').ready(function(){
   // Focus with keyboard/enter to send
   enterToSend()
   typeToFocus()
+
+  // Add tab to switch colors
+  addTabToSwitchColorListener(this.activeColor)
 })
 
 function renderChatInput(){
@@ -78,6 +81,23 @@ function addPaletteListener() {
   $('body').on('click', '.color-picker', function(){
     palette.selectColor(this.dataset.color)
   })
+}
+
+function addTabToSwitchColorListener() {
+  $('body').on('keydown', (event) => {
+    if ( event.which === 9 ) {
+      findAndSelectNextColor(palette.activeColor)
+    }
+  })
+}
+
+function findAndSelectNextColor(color) {
+  let nextIndex = parseInt(colors.indexOf(color)) + 1
+  if ( nextIndex === 16 ) {
+    nextIndex = 0
+  }
+  let nextColor = colors[nextIndex]
+  palette.selectColor(nextColor)
 }
 
 function onDataReceived(data) {
