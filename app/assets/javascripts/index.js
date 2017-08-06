@@ -86,6 +86,7 @@ function addPaletteListener() {
 function addTabToSwitchColorListener() {
   $('body').on('keydown', (event) => {
     if ( event.which === 9 ) {
+      event.preventDefault()
       findAndSelectNextColor(palette.activeColor)
     }
   })
