@@ -32,17 +32,6 @@ class ColorPalette {
     this.render()
   }
 
-  // For tab-to-select-next-color
-  // (addTabToSwitchColorListener)
-  findAndSelectNextColor(color) {
-    let nextIndex = colors.findIndex(color) + 1
-    if ( nextIndex === 16 ) {
-      nextIndex = 0
-    }
-    let nextColor = colors[nextIndex]
-    this.activeColor = nextColor
-  }
-
   toggleSelector() {
     $('#btn-toggle-palette').on('click', (event) => {
       $('.color-palette').toggle()

@@ -24,6 +24,7 @@ $('document').ready(function(){
 
   // Add tab to switch colors
   addTabToSwitchColorListener(this.activeColor)
+  addCapsLockToSwitchColorBack(this.activeColor)
 })
 
 function renderChatInput(){
@@ -99,6 +100,24 @@ function findAndSelectNextColor(color) {
   }
   let nextColor = colors[nextIndex]
   palette.selectColor(nextColor)
+}
+
+function addCapsLockToSwitchColorBack() {
+  $('body').on('keydown', (event) => {
+    if ( event.which === 16 ) {
+      event.preventDefault()
+      findAndSelectPreviousColor(palette.activeColor)
+    }
+  })
+}
+
+function findAndSelectPreviousColor(color) {
+  let lastIndex = parseInt(colors.indexOf(color)) - 1
+  if ( lastIndex === -1 ) {
+    lastIndex = 15
+  }
+  let lastColor = colors[lastIndex]
+  palette.selectColor(lastColor)
 }
 
 function onDataReceived(data) {
