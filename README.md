@@ -1,7 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Pixel Playground!
+
+(to see the live site in action, go [here](https://pixel-playground.herokuapp.com/ "Pixel Playground"))
 
 Things you may want to cover:
 
