@@ -12,4 +12,5 @@ Pixel Playground is a collaborative art experience, inspired by Reddit's Rplace.
 * Rails 5
 * HTML5 Canvas
 * Websockets (powered by Action Cable)
+* PostgreSQL
 
